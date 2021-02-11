@@ -24,8 +24,7 @@ namespace AntDesign.Pro.Layout
             }
         };
 
-        [Parameter] public EventCallback<MenuItem> OnUserItemSelected { get; set; }
-        [Parameter] public EventCallback<MenuItem> OnLangItemSelected { get; set; }
+        private string[] _locales = { "zh-CN", "zh-TW", "en-US", "pt-BR" };
 
         private IEnumerable<AvatarMenuItem> _avatarMenuItems = new AvatarMenuItem[]
         {
@@ -34,6 +33,27 @@ namespace AntDesign.Pro.Layout
             new AvatarMenuItem { IsDivider = true },
             new AvatarMenuItem { Key = "logout", IconType = "logout", Option = "个人中心"}
         };
+
+
+        private IDictionary<string, string> _languageLabels = new Dictionary<string, string>
+        {
+            ["zh-CN"] = "简体中文",
+            ["zh-TW"] = "繁体中文",
+            ["en-US"] = "English",
+            ["pt-BR"] = "Português",
+        };
+        private IDictionary<string, string> _languageIcons = new Dictionary<string, string>
+        {
+            ["zh-CN"] = "🇨🇳",
+            ["zh-TW"] = "🇭🇰",
+            ["en-US"] = "🇺🇸",
+            ["pt-BR"] = "🇧🇷",
+        };
+
+
+        [Parameter] public EventCallback<MenuItem> OnUserItemSelected { get; set; }
+        [Parameter] public EventCallback<MenuItem> OnLangItemSelected { get; set; }
+
 
         protected override void OnInitialized()
         {

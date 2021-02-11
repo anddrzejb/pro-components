@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Globalization;
 using Microsoft.AspNetCore.Components;
 
 namespace AntDesign.Pro.Layout
@@ -7,6 +8,9 @@ namespace AntDesign.Pro.Layout
     {
         [Parameter] 
         public string[] Locales { get; set; } = { "zh-CN", "zh-TW", "en-US", "pt-BR" };
+
+        [Parameter]
+        public string SelectedLocale { get; set; } = CultureInfo.CurrentCulture.Name;
 
         [Parameter]
         public IDictionary<string, string> LanguageLabels { get; set; } = new Dictionary<string, string>
