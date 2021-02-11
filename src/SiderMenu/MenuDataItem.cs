@@ -1,12 +1,9 @@
-﻿using Microsoft.AspNetCore.Components;
-using OneOf;
-
-namespace AntDesign.Pro.Layout
+﻿namespace AntDesign.Pro.Layout
 {
     public class MenuDataItem
     {
         public string[] Authority { get; set; }        
-        public MenuDataItem[] Children { get; set; }
+        public virtual MenuDataItem[] Children { get; set; }
         public bool HideChildrenInMenu { get; set; }
         public bool HideInMenu { get; set; }
         public string Icon { get; set; }
