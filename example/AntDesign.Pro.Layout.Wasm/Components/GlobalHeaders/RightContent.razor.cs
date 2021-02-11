@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Components;
 
 namespace AntDesign.Pro.Layout
@@ -26,6 +26,14 @@ namespace AntDesign.Pro.Layout
 
         [Parameter] public EventCallback<MenuItem> OnUserItemSelected { get; set; }
         [Parameter] public EventCallback<MenuItem> OnLangItemSelected { get; set; }
+
+        private IEnumerable<AvatarMenuItem> _avatarMenuItems = new AvatarMenuItem[]
+        {
+            new AvatarMenuItem { Key = "center", IconType = "user", Option = "个人中心"},
+            new AvatarMenuItem { Key = "setting", IconType = "setting", Option = "个人中心"},
+            new AvatarMenuItem { IsDivider = true },
+            new AvatarMenuItem { Key = "logout", IconType = "logout", Option = "个人中心"}
+        };
 
         protected override void OnInitialized()
         {
