@@ -16,23 +16,15 @@
     <Copyright>James Yeung</Copyright>
     <Authors>James Yeung</Authors>
     <PackageIcon>logo.png</PackageIcon>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
   <ItemGroup>
     <None Include="logo.png" Pack="true" PackagePath="" />
   </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="d:\dotnet\AntDesignBlazor\Forked\Components\components\AntDesign.csproj" />
-  </ItemGroup>
   
-  <!--<ItemGroup>
+  <ItemGroup>
     <PackageReference Include="AntDesign" Version="0.6.0-*" />
-  </ItemGroup>-->
+  </ItemGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' And '$(SolutionDir)'==''">
     <SolutionDir>../</SolutionDir>
