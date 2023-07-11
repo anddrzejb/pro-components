@@ -4,7 +4,7 @@ namespace AntDesign.Pro.Layout
 {
     public partial class NoticeIcon : AntDomComponentBase
     {
-        private readonly TriggerType[] _trigger = { TriggerType.Click };
+        private readonly Trigger[] _trigger = { AntDesign.Trigger.Click };
 
         [Parameter] public bool Visible { get; set; }
         [Parameter] public int Count { get; set; }
