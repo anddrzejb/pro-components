@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-	<TargetFrameworks>net6.0</TargetFrameworks>
-	<LangVersion>latest</LangVersion>
+    <TargetFramework>net6</TargetFramework>
+    <LangVersion>latest</LangVersion>
     <OutputType>Library</OutputType>
     <IsPackable>true</IsPackable>
     <RazorLangVersion>3.0</RazorLangVersion>
@@ -21,6 +21,10 @@
   <ItemGroup>
     <None Include="logo.png" Pack="true" PackagePath="" />
   </ItemGroup>
+  
+  <ItemGroup>
+<!--    <PackageReference Include="AntDesign" Version="0.6.0-*" />-->
+  </ItemGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' And '$(SolutionDir)'==''">
     <SolutionDir>../</SolutionDir>
@@ -33,12 +37,12 @@
     </Exec>
     <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
     <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
-    <!--<Exec WorkingDirectory="$(SolutionDir)" Command="npm install" />-->
+    <Exec WorkingDirectory="$(SolutionDir)" Command="npm install" />
   </Target>
 
-  <!--<Target Name="DebugRunGulp" BeforeTargets="DebugEnsureNodeEnv" Condition=" '$(Configuration)' == 'Debug' And Exists('$(SolutionDir)node_modules') ">
+  <Target Name="DebugRunGulp" BeforeTargets="DebugEnsureNodeEnv" Condition=" '$(Configuration)' == 'Debug' And Exists('$(SolutionDir)node_modules') ">
     <Exec WorkingDirectory="$(SolutionDir)" Command="npm run gulp:layout" />
-  </Target>-->
+  </Target>
 
   <Target Name="PublishRunGulp" AfterTargets="ComputeFilesToPublish">
     <Exec WorkingDirectory="$(SolutionDir)" Command="npm install" />
@@ -46,12 +50,12 @@
   </Target>
 
   <ItemGroup>
-    <ProjectReference Include="C:\dotnet\AntDesignBlazor\Forked\Components\components\AntDesign.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Update="**\*.razor">
       <Pack>false</Pack>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="D:\dotnet\AntDesignBlazor\Forked\Components\components\AntDesign.csproj" />
   </ItemGroup>
 </Project>
